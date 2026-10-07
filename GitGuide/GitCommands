@@ -1,0 +1,283 @@
+========================================
+          BASIC GIT COMMAND FLOW
+========================================
+
+1. FIRST-TIME GIT CONFIGURATION
+--------------------------------
+
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+
+Check configuration:
+git config --list
+
+
+2. CREATE A GIT REPOSITORY
+--------------------------
+
+Go inside your project folder:
+
+git init
+
+Check status:
+git status
+
+
+3. CONNECT PROJECT TO GITHUB
+----------------------------
+
+git remote add origin https://github.com/username/repository.git
+
+Check remote:
+git remote -v
+
+
+4. CHECK BRANCHES
+-----------------
+
+Local branches:
+git branch
+
+Remote branches:
+git branch -r
+
+All branches:
+git branch -a
+
+
+5. CREATE A NEW BRANCH
+----------------------
+
+Create + switch:
+git switch -c feature-name
+
+Check current branch:
+git branch
+
+
+6. WORK ON YOUR CODE
+--------------------
+
+Create / modify / delete files.
+
+Check changes:
+git status
+
+See changes:
+git diff
+
+
+7. STAGE CHANGES
+----------------
+
+Stage one file:
+git add filename.py
+
+Stage all changes:
+git add .
+
+
+8. COMMIT CHANGES
+-----------------
+
+git commit -m "Describe your changes"
+
+Check commit history:
+git log
+
+Short commit history:
+git log --oneline
+
+
+9. PUSH TO GITHUB
+-----------------
+
+First time pushing a new branch:
+git push -u origin feature-name
+
+After upstream is set:
+git push
+
+For main:
+git push -u origin main
+
+
+10. GET CHANGES FROM GITHUB
+---------------------------
+
+Fetch remote changes:
+git fetch
+
+Get + integrate remote changes:
+git pull
+
+
+11. SWITCH BRANCH
+-----------------
+
+Switch to existing branch:
+git switch main
+
+Switch to feature branch:
+git switch feature-name
+
+
+12. MERGE A BRANCH
+------------------
+
+Go to the branch you want to merge INTO:
+
+git switch main
+
+Get latest changes:
+git pull
+
+Merge feature branch:
+git merge feature-name
+
+Push merged changes:
+git push
+
+
+13. DELETE LOCAL BRANCH
+-----------------------
+
+First switch to another branch:
+
+git switch main
+
+Delete branch:
+git branch -d feature-name
+
+
+14. DELETE REMOTE BRANCH
+------------------------
+
+git push origin --delete feature-name
+
+
+15. RENAME BRANCH
+-----------------
+
+Rename current branch:
+git branch -m new-name
+
+Example:
+git branch -m development
+
+
+16. RESTORE / DISCARD CHANGES
+-----------------------------
+
+Restore a modified file:
+git restore filename.py
+
+Unstage a file:
+git restore --staged filename.py
+
+
+17. VIEW COMMIT HISTORY
+-----------------------
+
+Full history:
+git log
+
+Short history:
+git log --oneline
+
+Graph:
+git log --oneline --graph --all
+
+
+18. VIEW DIFFERENCES
+--------------------
+
+Unstaged changes:
+git diff
+
+Staged changes:
+git diff --staged
+
+
+19. CLONE EXISTING GITHUB REPOSITORY
+------------------------------------
+
+git clone https://github.com/username/repository.git
+
+Go inside project:
+cd repository
+
+Check:
+git status
+
+
+========================================
+       NORMAL DAILY GIT WORKFLOW
+========================================
+
+git switch main
+git pull
+
+# Create feature branch
+git switch -c feature-name
+
+# Work on your code...
+
+git status
+git add .
+git commit -m "Add feature"
+
+# Push feature branch
+git push -u origin feature-name
+
+# After feature is completed
+git switch main
+git pull
+git merge feature-name
+git push
+
+# Delete feature branch
+git branch -d feature-name
+git push origin --delete feature-name
+
+
+========================================
+          SIMPLE GIT FLOW
+========================================
+
+Working Directory
+       |
+       | git add .
+       ↓
+Staging Area
+       |
+       | git commit -m "message"
+       ↓
+Local Repository
+       |
+       | git push
+       ↓
+GitHub
+
+
+========================================
+       MOST IMPORTANT COMMANDS
+========================================
+
+git status
+git add .
+git commit -m "message"
+git push
+git pull
+
+git branch
+git switch branch-name
+git switch -c branch-name
+git merge branch-name
+
+git fetch
+git log --oneline
+git remote -v
+
+git branch -d branch-name
+git push origin --delete branch-name
